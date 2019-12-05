@@ -41,7 +41,7 @@ func (database *rocksServer) Get(ctx context.Context, request *rocksdb_example.G
 	if err != nil {
 		return nil, err
 	} else {
-		return &rocksdb_example.GetResponse{Key: key, Value: value}, nil
+		return &rocksdb_example.GetResponse{Key: key, Value: string(value.Data())}, nil
 	}
 }
 func main() {
