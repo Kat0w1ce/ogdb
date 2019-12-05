@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="" />
+    <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/awesomeProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/awesomeProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,21 +17,30 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTTP Request" />
         <option value="Go File" />
       </list>
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1UYP2BtCsc9o98W87OOtt15MZ5H" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -63,15 +79,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://goproxy.io</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="182" width="800" height="686" key="#Plugins" timestamp="1575542703024">
+    <state x="555" y="182" width="800" height="686" key="#Plugins" timestamp="1575543584527">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state x="555" y="182" width="800" height="686" key="#Plugins/0.27.1920.987@0.27.1920.987" timestamp="1575542703024" />
+    <state x="555" y="182" width="800" height="686" key="#Plugins/0.27.1920.987@0.27.1920.987" timestamp="1575543584527" />
     <state x="418" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575534614608">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
@@ -96,9 +115,13 @@
       <screen x="0" y="27" width="1920" height="987" />
     </state>
     <state width="1354" height="240" key="GridCell.Tab.0.right/0.27.1920.987@0.27.1920.987" timestamp="1575534708425" />
-    <state x="623" y="252" width="672" height="678" key="search.everywhere.popup" timestamp="1575539197271">
+    <state x="728" y="440" width="454" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575553158048">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state x="623" y="252" width="672" height="678" key="search.everywhere.popup/0.27.1920.987@0.27.1920.987" timestamp="1575539197271" />
+    <state x="728" y="440" width="454" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.987@0.27.1920.987" timestamp="1575553158048" />
+    <state x="623" y="252" width="672" height="678" key="search.everywhere.popup" timestamp="1575549254283">
+      <screen x="0" y="27" width="1920" height="987" />
+    </state>
+    <state x="623" y="252" width="672" height="678" key="search.everywhere.popup/0.27.1920.987@0.27.1920.987" timestamp="1575549254283" />
   </component>
 </project>
