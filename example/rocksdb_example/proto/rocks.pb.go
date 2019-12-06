@@ -35,7 +35,7 @@ func (m *PutRequest) Reset()         { *m = PutRequest{} }
 func (m *PutRequest) String() string { return proto.CompactTextString(m) }
 func (*PutRequest) ProtoMessage()    {}
 func (*PutRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_rocks_81a4eeb19e508b4e, []int{0}
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{0}
 }
 func (m *PutRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PutRequest.Unmarshal(m, b)
@@ -80,7 +80,7 @@ func (m *PutResponse) Reset()         { *m = PutResponse{} }
 func (m *PutResponse) String() string { return proto.CompactTextString(m) }
 func (*PutResponse) ProtoMessage()    {}
 func (*PutResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_rocks_81a4eeb19e508b4e, []int{1}
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{1}
 }
 func (m *PutResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PutResponse.Unmarshal(m, b)
@@ -118,7 +118,7 @@ func (m *GetRequest) Reset()         { *m = GetRequest{} }
 func (m *GetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetRequest) ProtoMessage()    {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_rocks_81a4eeb19e508b4e, []int{2}
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{2}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRequest.Unmarshal(m, b)
@@ -157,7 +157,7 @@ func (m *GetResponse) Reset()         { *m = GetResponse{} }
 func (m *GetResponse) String() string { return proto.CompactTextString(m) }
 func (*GetResponse) ProtoMessage()    {}
 func (*GetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_rocks_81a4eeb19e508b4e, []int{3}
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{3}
 }
 func (m *GetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetResponse.Unmarshal(m, b)
@@ -191,11 +191,89 @@ func (m *GetResponse) GetValue() string {
 	return ""
 }
 
+type DeleteRequest struct {
+	Key                  string   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteRequest) Reset()         { *m = DeleteRequest{} }
+func (m *DeleteRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteRequest) ProtoMessage()    {}
+func (*DeleteRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{4}
+}
+func (m *DeleteRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteRequest.Unmarshal(m, b)
+}
+func (m *DeleteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteRequest.Marshal(b, m, deterministic)
+}
+func (dst *DeleteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteRequest.Merge(dst, src)
+}
+func (m *DeleteRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteRequest.Size(m)
+}
+func (m *DeleteRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteRequest proto.InternalMessageInfo
+
+func (m *DeleteRequest) GetKey() string {
+	if m != nil {
+		return m.Key
+	}
+	return ""
+}
+
+type DeleteResponse struct {
+	Ok                   bool     `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteResponse) Reset()         { *m = DeleteResponse{} }
+func (m *DeleteResponse) String() string { return proto.CompactTextString(m) }
+func (*DeleteResponse) ProtoMessage()    {}
+func (*DeleteResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_rocks_0ab3a51d07e03263, []int{5}
+}
+func (m *DeleteResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteResponse.Unmarshal(m, b)
+}
+func (m *DeleteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteResponse.Marshal(b, m, deterministic)
+}
+func (dst *DeleteResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteResponse.Merge(dst, src)
+}
+func (m *DeleteResponse) XXX_Size() int {
+	return xxx_messageInfo_DeleteResponse.Size(m)
+}
+func (m *DeleteResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteResponse proto.InternalMessageInfo
+
+func (m *DeleteResponse) GetOk() bool {
+	if m != nil {
+		return m.Ok
+	}
+	return false
+}
+
 func init() {
 	proto.RegisterType((*PutRequest)(nil), "rocksdb_example.PutRequest")
 	proto.RegisterType((*PutResponse)(nil), "rocksdb_example.PutResponse")
 	proto.RegisterType((*GetRequest)(nil), "rocksdb_example.GetRequest")
 	proto.RegisterType((*GetResponse)(nil), "rocksdb_example.GetResponse")
+	proto.RegisterType((*DeleteRequest)(nil), "rocksdb_example.DeleteRequest")
+	proto.RegisterType((*DeleteResponse)(nil), "rocksdb_example.DeleteResponse")
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -212,6 +290,7 @@ const _ = grpc.SupportPackageIsVersion4
 type RocksdbClient interface {
 	Put(ctx context.Context, in *PutRequest, opts ...grpc.CallOption) (*PutResponse, error)
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
 }
 
 type rocksdbClient struct {
@@ -240,10 +319,20 @@ func (c *rocksdbClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.Ca
 	return out, nil
 }
 
+func (c *rocksdbClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+	out := new(DeleteResponse)
+	err := c.cc.Invoke(ctx, "/rocksdb_example.Rocksdb/delete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RocksdbServer is the server API for Rocksdb service.
 type RocksdbServer interface {
 	Put(context.Context, *PutRequest) (*PutResponse, error)
 	Get(context.Context, *GetRequest) (*GetResponse, error)
+	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
 }
 
 func RegisterRocksdbServer(s *grpc.Server, srv RocksdbServer) {
@@ -286,6 +375,24 @@ func _Rocksdb_Get_Handler(srv interface{}, ctx context.Context, dec func(interfa
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Rocksdb_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RocksdbServer).Delete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rocksdb_example.Rocksdb/Delete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RocksdbServer).Delete(ctx, req.(*DeleteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Rocksdb_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "rocksdb_example.Rocksdb",
 	HandlerType: (*RocksdbServer)(nil),
@@ -298,15 +405,19 @@ var _Rocksdb_serviceDesc = grpc.ServiceDesc{
 			MethodName: "get",
 			Handler:    _Rocksdb_Get_Handler,
 		},
+		{
+			MethodName: "delete",
+			Handler:    _Rocksdb_Delete_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "rocks.proto",
 }
 
-func init() { proto.RegisterFile("rocks.proto", fileDescriptor_rocks_81a4eeb19e508b4e) }
+func init() { proto.RegisterFile("rocks.proto", fileDescriptor_rocks_0ab3a51d07e03263) }
 
-var fileDescriptor_rocks_81a4eeb19e508b4e = []byte{
-	// 192 bytes of a gzipped FileDescriptorProto
+var fileDescriptor_rocks_0ab3a51d07e03263 = []byte{
+	// 237 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2e, 0xca, 0x4f, 0xce,
 	0x2e, 0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x07, 0x73, 0x52, 0x92, 0xe2, 0x53, 0x2b,
 	0x12, 0x73, 0x0b, 0x72, 0x52, 0x95, 0x4c, 0xb8, 0xb8, 0x02, 0x4a, 0x4b, 0x82, 0x52, 0x0b, 0x4b,
@@ -314,9 +425,12 @@ var fileDescriptor_rocks_81a4eeb19e508b4e = []byte{
 	0x83, 0x40, 0x4c, 0x21, 0x11, 0x2e, 0xd6, 0xb2, 0xc4, 0x9c, 0xd2, 0x54, 0x09, 0x26, 0xb0, 0x18,
 	0x84, 0xa3, 0x24, 0xcb, 0xc5, 0x0d, 0xd6, 0x55, 0x5c, 0x90, 0x9f, 0x57, 0x9c, 0x2a, 0xc4, 0xc7,
 	0xc5, 0xe4, 0xef, 0x0d, 0xd6, 0xc5, 0x11, 0xc4, 0xe4, 0xef, 0xad, 0x24, 0xc7, 0xc5, 0xe5, 0x9e,
-	0x8a, 0xdb, 0x50, 0x25, 0x53, 0x2e, 0x6e, 0xb0, 0x3c, 0x54, 0x3b, 0x91, 0xb6, 0x1a, 0x4d, 0x64,
-	0xe4, 0x62, 0x0f, 0x82, 0xb8, 0x5f, 0xc8, 0x89, 0x8b, 0xb9, 0xa0, 0xb4, 0x44, 0x48, 0x5a, 0x0f,
-	0xcd, 0x43, 0x7a, 0x08, 0xdf, 0x48, 0xc9, 0x60, 0x97, 0x84, 0xd8, 0xaa, 0xc4, 0x00, 0x32, 0x23,
-	0x3d, 0x15, 0x9b, 0x19, 0x08, 0xc7, 0x63, 0x31, 0x03, 0xc9, 0xe5, 0x4a, 0x0c, 0x49, 0x6c, 0xe0,
-	0x70, 0x35, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0x33, 0x7e, 0x56, 0x52, 0x66, 0x01, 0x00, 0x00,
+	0x8a, 0xdb, 0x50, 0x25, 0x53, 0x2e, 0x6e, 0xb0, 0x3c, 0x54, 0x3b, 0xb1, 0xb6, 0x2a, 0x72, 0xf1,
+	0xba, 0xa4, 0xe6, 0xa4, 0x96, 0xa4, 0xe2, 0x36, 0x59, 0x81, 0x8b, 0x0f, 0xa6, 0x04, 0xe1, 0xb6,
+	0xfc, 0x6c, 0x98, 0xdb, 0xf2, 0xb3, 0x8d, 0xee, 0x31, 0x72, 0xb1, 0x07, 0x41, 0x02, 0x41, 0xc8,
+	0x89, 0x8b, 0xb9, 0xa0, 0xb4, 0x44, 0x48, 0x5a, 0x0f, 0x2d, 0x54, 0xf4, 0x10, 0x41, 0x22, 0x25,
+	0x83, 0x5d, 0x12, 0x62, 0xba, 0x12, 0x03, 0xc8, 0x8c, 0xf4, 0x54, 0x6c, 0x66, 0x20, 0x42, 0x00,
+	0x8b, 0x19, 0x48, 0xde, 0x57, 0x62, 0x10, 0xf2, 0xe6, 0x62, 0x4b, 0x01, 0xbb, 0x5a, 0x48, 0x0e,
+	0x43, 0x25, 0x8a, 0x8f, 0xa5, 0xe4, 0x71, 0xca, 0xc3, 0x0c, 0x4b, 0x62, 0x03, 0xc7, 0xb4, 0x31,
+	0x20, 0x00, 0x00, 0xff, 0xff, 0xb7, 0x76, 0x6f, 0x98, 0xf8, 0x01, 0x00, 0x00,
 }

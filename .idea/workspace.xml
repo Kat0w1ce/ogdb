@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dump/000003.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/CURRENT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/IDENTITY" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/LOCK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/LOG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/MANIFEST-000001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump/OPTIONS-000005" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000004.sst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000007.sst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000009.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/IDENTITY" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOCK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1575554675945222" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1575587579645794" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000008" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000008" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000011" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.proto" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +69,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build rocksdb_client.go">
     <configuration name="go build echo_server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
@@ -55,8 +79,28 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build rocks_server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" />
+      <package value="awesomeProject" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build rocksdb_client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" />
+      <package value="awesomeProject" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build rocksdb_client.go" />
+        <item itemvalue="Go Build.go build rocks_server.go" />
         <item itemvalue="Go Build.go build echo_server.go" />
       </list>
     </recent_temporary>
@@ -98,26 +142,30 @@
       <screen x="0" y="27" width="1920" height="987" />
     </state>
     <state x="652" y="325" width="606" height="399" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.987@0.27.1920.987" timestamp="1575531963660" />
+    <state x="634" y="149" width="642" height="751" key="#go_build_rocks_server.go" timestamp="1575554499978">
+      <screen x="0" y="27" width="1920" height="987" />
+    </state>
+    <state x="634" y="149" width="642" height="751" key="#go_build_rocks_server.go/0.27.1920.987@0.27.1920.987" timestamp="1575554499978" />
     <state x="525" y="114" width="860" height="822" key="CommitChangelistDialog2" timestamp="1575553306664">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
     <state x="525" y="114" width="860" height="822" key="CommitChangelistDialog2/0.27.1920.987@0.27.1920.987" timestamp="1575553306664" />
-    <state width="1354" height="240" key="GridCell.Tab.0.bottom" timestamp="1575534708425">
+    <state width="1874" height="240" key="GridCell.Tab.0.bottom" timestamp="1575587910361">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state width="1354" height="240" key="GridCell.Tab.0.bottom/0.27.1920.987@0.27.1920.987" timestamp="1575534708425" />
-    <state width="1354" height="240" key="GridCell.Tab.0.center" timestamp="1575534708424">
+    <state width="1874" height="240" key="GridCell.Tab.0.bottom/0.27.1920.987@0.27.1920.987" timestamp="1575587910361" />
+    <state width="1874" height="240" key="GridCell.Tab.0.center" timestamp="1575587910360">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state width="1354" height="240" key="GridCell.Tab.0.center/0.27.1920.987@0.27.1920.987" timestamp="1575534708424" />
-    <state width="1354" height="240" key="GridCell.Tab.0.left" timestamp="1575534708424">
+    <state width="1874" height="240" key="GridCell.Tab.0.center/0.27.1920.987@0.27.1920.987" timestamp="1575587910360" />
+    <state width="1874" height="240" key="GridCell.Tab.0.left" timestamp="1575587910359">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state width="1354" height="240" key="GridCell.Tab.0.left/0.27.1920.987@0.27.1920.987" timestamp="1575534708424" />
-    <state width="1354" height="240" key="GridCell.Tab.0.right" timestamp="1575534708425">
+    <state width="1874" height="240" key="GridCell.Tab.0.left/0.27.1920.987@0.27.1920.987" timestamp="1575587910359" />
+    <state width="1874" height="240" key="GridCell.Tab.0.right" timestamp="1575587910360">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
-    <state width="1354" height="240" key="GridCell.Tab.0.right/0.27.1920.987@0.27.1920.987" timestamp="1575534708425" />
+    <state width="1874" height="240" key="GridCell.Tab.0.right/0.27.1920.987@0.27.1920.987" timestamp="1575587910360" />
     <state x="728" y="440" width="454" height="169" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575553158048">
       <screen x="0" y="27" width="1920" height="987" />
     </state>

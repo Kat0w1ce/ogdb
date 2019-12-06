@@ -1,11 +1,10 @@
-package server
+package main
 
 import (
 	"awesomeProject/example/rocksdb_example/proto"
 	"context"
 	"fmt"
 	"github.com/tecbot/gorocksdb"
-	"golang.org/x/crypto/argon2"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"
@@ -34,7 +33,16 @@ func (database *rocksServer) Put(ctx context.Context, request *rocksdb_example.P
 		return &rocksdb_example.PutResponse{OK: true}, nil
 	}
 }
+func (database *rocksServer) Delete(ctx context.Context, request *rocksdb_example.DeleteRequest) (response *rocksdb_example.DeleteResponse, err error) {
+	key:=request.Key;
+	err=database.Db.Delete(database.Wo,[]byte(key))
+	if err!=nil{
+		return nil,err
+	}else {
+		return &rocksdb_example.DeleteResponse{Ok:true},nil
+	}
 
+}
 func (database *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequest) (response *rocksdb_example.GetResponse, err error) {
 	key := request.Key
 	value, err := database.Db.Get(database.Ro, []byte(key))
@@ -58,8 +66,9 @@ func main() {
 	if err != nil {
 		log.Fatal("failed open database")
 	}
-	dbServer.Ro = gorocksdb.NewNativeReadOptions()
-	dbServer.Wo = gorocksdb.NewNativeWriteOptions()
+	dbServer.Ro = gorocksdb.NewDefaultReadOptions()
+	dbServer.Wo = gorocksdb.NewDefaultWriteOptions()
+	defer dbServer.Db.Close()
 	listener, err := net.Listen("tcp", ADDRESS+":"+PORT)
 	if err != nil {
 		log.Fatal("failed listen at " + ADDRESS + ":" + PORT)
