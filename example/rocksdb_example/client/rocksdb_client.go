@@ -2,7 +2,6 @@ package main
 
 import (
 	rocksdb_example "awesomeProject/example/rocksdb_example/proto"
-	"fmt"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"log"
@@ -16,18 +15,48 @@ func main()  {
 	if err!=nil{
 		log.Fatal("Can't connect: "+ADDRESS)
 	}
+	defer conn.Close()
 	client:=rocksdb_example.NewRocksdbClient(conn)
-	//resp,err:=client.Put(context.Background(),&rocksdb_example.PutRequest{Key:"hello",Value:"world2"})
-	//if err!=nil{
-	//	panic("put error")
-	//}else {
-	//	fmt.Println(resp.OK)
-	//}
-	resp2,err:=client.Get(context.Background(),&rocksdb_example.GetRequest{Key:"hello"})
+	delete(&client,"hello")
+	put(&client,"og","db")
+	put(&client,"psg","lxo")
+	put(&client,"kato","wizz")
+	get(&client,"og")
+	put(&client,"psg","sb")
+	get(&client,"psg")
+	delete(&client,"psg")
+	get(&client,"psg")
+	delete(&client,"psg")
+}
+func put(client *rocksdb_example.RocksdbClient,key string ,value string)   {
+	resp,err:=(*client).Put(context.Background(),&rocksdb_example.PutRequest{
+		Key: key,
+		Value: value,
+	})
 	if err!=nil{
-		panic("get error")
+		log.Fatal("put error")
 	}else {
-		fmt.Println(resp2.Key,resp2.Value)
+		log.Println("put ",key,value,resp.GetOK())
 	}
+}
 
+func get(client *rocksdb_example.RocksdbClient,key string )   {
+	resp,err:=(*client).Get(context.Background(),&rocksdb_example.GetRequest{
+		Key: key,
+	})
+	if err!=nil{
+		log.Fatal("get error")
+	}else {
+		log.Println("get ",resp.GetKey(),resp.GetValue())
+	}
+}
+func delete(client *rocksdb_example.RocksdbClient,key string)  {
+	resp,err:=(*client).Delete(context.Background(),&rocksdb_example.DeleteRequest{
+		Key: key,
+	})
+	if err!=nil{
+		log.Fatal("delete error")
+	}else {
+		log.Println("delete ",resp.GetOk())
+	}
 }

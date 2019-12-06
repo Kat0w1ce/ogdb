@@ -37,8 +37,10 @@ func (db *rocksServer) Delete(ctx context.Context, request *rocksdb_example.Dele
 	key:=request.Key;
 	err= db.Db.Delete(db.Wo,[]byte(key))
 	if err!=nil{
+		log.Fatal(err)
 		return nil,err
 	}else {
+		log.Println("delete ",key)
 		return &rocksdb_example.DeleteResponse{Ok:true},nil
 	}
 
@@ -47,8 +49,11 @@ func (db *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequ
 	key := request.Key
 	value, err := db.Db.Get(db.Ro, []byte(key))
 	if err != nil {
+		log.Fatal(err)
 		return nil, err
 	} else {
+
+		log.Println("get ",key,string(value.Data()))
 		return &rocksdb_example.GetResponse{Key: key, Value: string(value.Data())}, nil
 	}
 }
