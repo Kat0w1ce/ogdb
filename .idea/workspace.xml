@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dump/000003.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/CURRENT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/IDENTITY" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/LOCK" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/LOG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/MANIFEST-000001" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump/OPTIONS-000005" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000004.sst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000007.sst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000009.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/IDENTITY" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOCK" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1575554675945222" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1575587579645794" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000008" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000008" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000011" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.proto" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/proto/rocks.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

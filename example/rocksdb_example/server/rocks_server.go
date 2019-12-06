@@ -23,9 +23,9 @@ type rocksServer struct {
 }
 
 //how to
-func (database *rocksServer) Put(ctx context.Context, request *rocksdb_example.PutRequest) (response *rocksdb_example.PutResponse, err error) {
+func (db *rocksServer) Put(ctx context.Context, request *rocksdb_example.PutRequest) (response *rocksdb_example.PutResponse, err error) {
 	key, value := request.Key, request.Value
-	err = database.Db.Put(database.Wo, []byte(key), []byte(value))
+	err = db.Db.Put(db.Wo, []byte(key), []byte(value))
 	if err != nil {
 		return &rocksdb_example.PutResponse{OK: false}, err
 	} else {
@@ -33,9 +33,9 @@ func (database *rocksServer) Put(ctx context.Context, request *rocksdb_example.P
 		return &rocksdb_example.PutResponse{OK: true}, nil
 	}
 }
-func (database *rocksServer) Delete(ctx context.Context, request *rocksdb_example.DeleteRequest) (response *rocksdb_example.DeleteResponse, err error) {
+func (db *rocksServer) Delete(ctx context.Context, request *rocksdb_example.DeleteRequest) (response *rocksdb_example.DeleteResponse, err error) {
 	key:=request.Key;
-	err=database.Db.Delete(database.Wo,[]byte(key))
+	err= db.Db.Delete(db.Wo,[]byte(key))
 	if err!=nil{
 		return nil,err
 	}else {
@@ -43,9 +43,9 @@ func (database *rocksServer) Delete(ctx context.Context, request *rocksdb_exampl
 	}
 
 }
-func (database *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequest) (response *rocksdb_example.GetResponse, err error) {
+func (db *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequest) (response *rocksdb_example.GetResponse, err error) {
 	key := request.Key
-	value, err := database.Db.Get(database.Ro, []byte(key))
+	value, err := db.Db.Get(db.Ro, []byte(key))
 	if err != nil {
 		return nil, err
 	} else {
@@ -53,21 +53,10 @@ func (database *rocksServer) Get(ctx context.Context, request *rocksdb_example.G
 	}
 }
 func main() {
-	var dbServer *rocksServer
-	var err error
-	bbto := gorocksdb.NewDefaultBlockBasedTableOptions()
-	bbto.SetBlockCache(gorocksdb.NewLRUCache(3 << 30))
-	opts := gorocksdb.NewDefaultOptions()
-	opts.SetBlockBasedTableFactory(bbto)
-	opts.SetCreateIfMissing(true)
-	//db_server=new(rocksServer{gorocksdb.OpenDb(opts,"/server"),gorocksdb.NewDefaultWriteOptions(),gorocksdb.NewDefaultReadOptions()})
-	dbServer = new(rocksServer)
-	dbServer.Db, err = gorocksdb.OpenDb(opts, "dump")
-	if err != nil {
-		log.Fatal("failed open database")
+	dbServer :=new(rocksServer)
+	if err:=dbServer.init();err!=nil{
+		panic(err)
 	}
-	dbServer.Ro = gorocksdb.NewDefaultReadOptions()
-	dbServer.Wo = gorocksdb.NewDefaultWriteOptions()
 	defer dbServer.Db.Close()
 	listener, err := net.Listen("tcp", ADDRESS+":"+PORT)
 	if err != nil {
@@ -81,4 +70,21 @@ func main() {
 	if err = rocksdbServer.Serve(listener); err != nil {
 		log.Fatal("Error")
 	}
+}
+
+func (db *rocksServer) init() error{
+	var err error
+	bbto := gorocksdb.NewDefaultBlockBasedTableOptions()
+	bbto.SetBlockCache(gorocksdb.NewLRUCache(3 << 30))
+	opts := gorocksdb.NewDefaultOptions()
+	opts.SetBlockBasedTableFactory(bbto)
+	opts.SetCreateIfMissing(true)
+	//db_server=new(rocksServer{gorocksdb.OpenDb(opts,"/server"),gorocksdb.NewDefaultWriteOptions(),gorocksdb.NewDefaultReadOptions()})
+	db.Db,err = gorocksdb.OpenDb(opts, "dump")
+	if err != nil {
+		return err
+	}
+	db.Ro = gorocksdb.NewDefaultReadOptions()
+	db.Wo = gorocksdb.NewDefaultWriteOptions()
+	return nil
 }
