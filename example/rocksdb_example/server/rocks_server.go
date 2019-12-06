@@ -1,7 +1,6 @@
 package main
 
 import (
-	"awesomeProject/example/rocksdb_example/proto"
 	"context"
 	"fmt"
 	"github.com/tecbot/gorocksdb"
@@ -34,14 +33,14 @@ func (db *rocksServer) Put(ctx context.Context, request *rocksdb_example.PutRequ
 	}
 }
 func (db *rocksServer) Delete(ctx context.Context, request *rocksdb_example.DeleteRequest) (response *rocksdb_example.DeleteResponse, err error) {
-	key:=request.Key;
-	err= db.Db.Delete(db.Wo,[]byte(key))
-	if err!=nil{
+	key := request.Key
+	err = db.Db.Delete(db.Wo, []byte(key))
+	if err != nil {
 		log.Fatal(err)
-		return nil,err
-	}else {
-		log.Println("delete ",key)
-		return &rocksdb_example.DeleteResponse{Ok:true},nil
+		return nil, err
+	} else {
+		log.Println("delete ", key)
+		return &rocksdb_example.DeleteResponse{Ok: true}, nil
 	}
 
 }
@@ -53,13 +52,13 @@ func (db *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequ
 		return nil, err
 	} else {
 
-		log.Println("get ",key,string(value.Data()))
+		log.Println("get ", key, string(value.Data()))
 		return &rocksdb_example.GetResponse{Key: key, Value: string(value.Data())}, nil
 	}
 }
 func main() {
-	dbServer :=new(rocksServer)
-	if err:=dbServer.init();err!=nil{
+	dbServer := new(rocksServer)
+	if err := dbServer.init(); err != nil {
 		panic(err)
 	}
 	defer dbServer.Db.Close()
@@ -77,7 +76,7 @@ func main() {
 	}
 }
 
-func (db *rocksServer) init() error{
+func (db *rocksServer) init() error {
 	var err error
 	bbto := gorocksdb.NewDefaultBlockBasedTableOptions()
 	bbto.SetBlockCache(gorocksdb.NewLRUCache(3 << 30))
@@ -85,7 +84,7 @@ func (db *rocksServer) init() error{
 	opts.SetBlockBasedTableFactory(bbto)
 	opts.SetCreateIfMissing(true)
 	//db_server=new(rocksServer{gorocksdb.OpenDb(opts,"/server"),gorocksdb.NewDefaultWriteOptions(),gorocksdb.NewDefaultReadOptions()})
-	db.Db,err = gorocksdb.OpenDb(opts, "dump")
+	db.Db, err = gorocksdb.OpenDb(opts, "dump")
 	if err != nil {
 		return err
 	}

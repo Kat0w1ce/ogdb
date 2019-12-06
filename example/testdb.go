@@ -5,14 +5,14 @@ import (
 	"github.com/tecbot/gorocksdb"
 )
 
-func Run()  int {
+func Run() int {
 	bbto := gorocksdb.NewDefaultBlockBasedTableOptions()
 	bbto.SetBlockCache(gorocksdb.NewLRUCache(3 << 30))
 	opts := gorocksdb.NewDefaultOptions()
 	opts.SetBlockBasedTableFactory(bbto)
 	opts.SetCreateIfMissing(true)
 	db, err := gorocksdb.OpenDb(opts, "/path/to/db")
-	if err!=nil{
+	if err != nil {
 		fmt.Println("open db error")
 		return 0
 	}

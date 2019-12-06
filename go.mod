@@ -1,4 +1,4 @@
-module awesomeProject
+module ogdb
 
 go 1.12
 

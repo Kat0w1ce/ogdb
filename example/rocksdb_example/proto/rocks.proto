@@ -1,34 +1,37 @@
 syntax = "proto3";
 package rocksdb_example;
 
-service Rocksdb{
-    rpc put (PutRequest) returns (PutResponse){}
-    rpc get (GetRequest) returns (GetResponse){}
-    rpc delete (DeleteRequest)  returns (DeleteResponse){}
+service Rocksdb {
+    rpc put (PutRequest) returns (PutResponse) {
+    }
+    rpc get (GetRequest) returns (GetResponse) {
+    }
+    rpc delete (DeleteRequest) returns (DeleteResponse) {
+    }
 
 }
 
-message PutRequest{
-    string key= 1 ;
+message PutRequest {
+    string key = 1;
     string value = 2;
 }
 
-message PutResponse{
+message PutResponse {
     bool OK = 1;
 }
 
-message GetRequest{
+message GetRequest {
     string key = 1;
 }
 
-message GetResponse{
-    string key=1;
-    string value=2;
+message GetResponse {
+    string key = 1;
+    string value = 2;
 }
-message DeleteRequest{
-    string key=1;
+message DeleteRequest {
+    string key = 1;
 }
 
-message DeleteResponse{
-    bool ok=1;
+message DeleteResponse {
+    bool ok = 1;
 }

@@ -1,10 +1,10 @@
 syntax = "proto3";
 package echo_example;
 
-service echo{
+service echo {
     rpc echo (msg) returns (msg);
 }
 
-message msg{
-    string text =1;
+message msg {
+    string text = 1;
 }
