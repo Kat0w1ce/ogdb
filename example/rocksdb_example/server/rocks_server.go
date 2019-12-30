@@ -1,5 +1,8 @@
 package main
 
+
+//TODO config server by flags
+
 import (
 	"context"
 	"fmt"
@@ -8,6 +11,7 @@ import (
 	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
+	"ogdb/example/rocksdb_example/proto"
 )
 
 const (
