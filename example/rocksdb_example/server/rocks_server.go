@@ -12,9 +12,11 @@ import (
 	"log"
 	"net"
 	"ogdb/example/rocksdb_example/proto"
+	//"golang.org/x/net/ipv4"
+	"flag"
 )
 
-const (
+var (
 	ADDRESS string = "localhost"
 	PORT    string = "8081"
 )
@@ -61,6 +63,9 @@ func (db *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequ
 	}
 }
 func main() {
+
+	flag.StringVar(&PORT,"p","2233","port")
+	flag.Parse()
 	dbServer := new(rocksServer)
 	if err := dbServer.init(); err != nil {
 		panic(err)
