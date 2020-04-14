@@ -5,13 +5,18 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"ogdb/example/echo_example/demo"
+	"flag"
 )
 
-const (
-	ADDRESS string = "localhost:8081"
+var (
+	ADDRESS string = "localhost"
+	PORT string ="8081"
 )
 
 func main() {
+	flag.StringVar(&ADDRESS,"A","localhost","address")
+	flag.StringVar(&PORT,"p","2233","address")
+	flag.Parse()
 	conn, err := grpc.Dial(ADDRESS, grpc.WithInsecure())
 	if err != nil {
 		log.Fatal("Can't connect: " + ADDRESS)

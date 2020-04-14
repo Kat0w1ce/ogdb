@@ -2,17 +2,18 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net"
+	echo_example "ogdb/example/echo_example/demo"
+
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"log"
-	"net"
-	"ogdb/example/echo_example/demo"
 )
 
 const (
 	HOST string = "localhost"
-	PORT string = "8081"
+	PORT string = "2233"
 )
 
 type FormatData struct{}

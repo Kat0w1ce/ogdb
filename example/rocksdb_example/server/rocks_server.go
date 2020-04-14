@@ -1,17 +1,18 @@
 package main
 
-
 //TODO config server by flags
 
 import (
 	"context"
 	"fmt"
+	"log"
+	"net"
+	rocksdb_example "ogdb/example/rocksdb_example/proto"
+
 	"github.com/tecbot/gorocksdb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"log"
-	"net"
-	"ogdb/example/rocksdb_example/proto"
+
 	//"golang.org/x/net/ipv4"
 	"flag"
 )
@@ -31,10 +32,11 @@ type rocksServer struct {
 func (db *rocksServer) Put(ctx context.Context, request *rocksdb_example.PutRequest) (response *rocksdb_example.PutResponse, err error) {
 	key, value := request.Key, request.Value
 	err = db.Db.Put(db.Wo, []byte(key), []byte(value))
+	fmt.Println("1")
 	if err != nil {
 		return &rocksdb_example.PutResponse{OK: false}, err
 	} else {
-		fmt.Println("put ", key, value)
+		log.Println("put ", key, value)
 		return &rocksdb_example.PutResponse{OK: true}, nil
 	}
 }
@@ -64,7 +66,7 @@ func (db *rocksServer) Get(ctx context.Context, request *rocksdb_example.GetRequ
 }
 func main() {
 
-	flag.StringVar(&PORT,"p","2233","port")
+	flag.StringVar(&PORT, "p", "2233", "port")
 	flag.Parse()
 	dbServer := new(rocksServer)
 	if err := dbServer.init(); err != nil {
@@ -93,7 +95,7 @@ func (db *rocksServer) init() error {
 	opts.SetBlockBasedTableFactory(bbto)
 	opts.SetCreateIfMissing(true)
 	//db_server=new(rocksServer{gorocksdb.OpenDb(opts,"/server"),gorocksdb.NewDefaultWriteOptions(),gorocksdb.NewDefaultReadOptions()})
-	db.Db, err = gorocksdb.OpenDb(opts, "dump")
+	db.Db, err = gorocksdb.OpenDb(opts,fmt.Sprintln(ADDRESS,':',PORT) )
 	if err != nil {
 		return err
 	}
