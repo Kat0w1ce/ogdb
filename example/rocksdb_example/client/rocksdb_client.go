@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	rocksdb_example "ogdb/example/rocksdb_example/proto"
@@ -14,13 +15,16 @@ import (
 )
 
 var (
-	ADDRESS string = "localhost"
-	PORT    string = "8081"
 	connpool map[string]*grpc.ClientConn
+	filepath string
+	cnt0 int32=0
+	cnt1 int32=0
+	cnt2 int32=0
+	ip =[]string {"localhost:9999","127.0.0.1:2233","localhost:6655"}
 )
 
 func main() {
-	ip:=[]string {"localhost:9999","localhost:6655"}
+	flag.StringVar(&filepath,"f","data","choose file")
 	connpool=make(map[string]*grpc.ClientConn)
 	for _,addr:=range ip{
 		if conn,err:=grpc.Dial(addr,grpc.WithInsecure());err==nil{
@@ -35,7 +39,12 @@ func main() {
 	defer clear()
 	hashring:=consistHashing(ip)
 	//client := rocksdb_example.NewRocksdbClient(conn)
-	scanner := bufio.NewScanner(os.Stdin)
+	//read from file
+	f,err:=os.Open("data")
+	if err !=nil{
+		panic("failed to open data file")
+	}
+	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		line := scanner.Text()
 		cmd := strings.Split(line, " ")
@@ -66,17 +75,27 @@ func main() {
 //todo copy or ref
 func getClient(key string,c *consistent.Consistent) (*rocksdb_example.RocksdbClient,error){
 	 addr,err:=c.Get(key)
+
 	 fmt.Println(key,"at",addr)
 	 if err!=nil{
 	 	log.Fatalln("failed to get ip address")
 	 	return nil,err
 	 }
+	switch addr {
+	case ip[0]:
+		cnt0++
+	case ip[1]:
+		cnt1++
+	default:
+		cnt2++
+	}
 	 conn:=connpool[addr]
 	 client:=rocksdb_example.NewRocksdbClient(conn)
 	 return &client,nil
 }
 func consistHashing(ip []string) *consistent.Consistent{
 	c:=consistent.New()
+	c.NumberOfReplicas=16
 	for _,addr:=range ip{
 		c.Add(addr)
 	}
@@ -129,4 +148,5 @@ func clear() {
 			}
 		}
 	}
+	fmt.Println(cnt0,cnt1,cnt2)
 }

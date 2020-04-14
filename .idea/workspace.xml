@@ -2,68 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="&quot;implement Put Get rpc 12.5 21:40&quot;">
-      <change afterPath="$PROJECT_DIR$/example/hashring_example/client/result" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000031.sst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000035.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000038.sst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1586754136687647" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1586764377372242" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1586849482960685" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1586849916048044" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1586849940810338" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000034" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000030" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000037" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/000003.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/000004.sst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/000006.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/CURRENT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/IDENTITY" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/LOCK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/LOG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/LOG.old.1586881632979610" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/MANIFEST-000005" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/OPTIONS-000005" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/OPTIONS-000008" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/000004.sst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/000006.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/CURRENT" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/IDENTITY" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/LOCK" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/LOG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/MANIFEST-000001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/LOG.old.1586881642632341" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/MANIFEST-000005" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/OPTIONS-000005" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/000003.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/OPTIONS-000008" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/000004.sst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/000006.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/CURRENT" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/IDENTITY" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/LOCK" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/LOG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/MANIFEST-000001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/LOG.old.1586881637768425" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/MANIFEST-000005" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/OPTIONS-000005" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/ubuntu@120.53.9.103" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/processout/grpc-go-pool/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/processout/grpc-go-pool/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/processout/grpc-go-pool/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/processout/grpc-go-pool/pool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/idna.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/tables.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysctl_openbsd.pl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/openbsd_pledge.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/openbsd_unveil.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zptrace386_linux.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zptracearm_linux.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zptracemips_linux.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zptracemipsle_linux.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/stathat.com/c/consistent/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/stathat.com/c/consistent/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/stathat.com/c/consistent/consistent.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/OPTIONS-000008" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/loadbalance.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/loadbalance.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/echo_example/client/echo_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/echo_example/client/echo_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/echo_example/server/echo_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/echo_example/server/echo_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000004.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000007.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000010.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000015.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000017" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
