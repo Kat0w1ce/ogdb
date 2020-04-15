@@ -14,7 +14,7 @@ var (
 )
 
 func main() {
-	flag.StringVar(&ADDRESS,"a","localhost","address")
+	flag.StringVar(&ADDRESS,"a","0.0.0.0","address")
 	flag.StringVar(&PORT,"p","2233","address")
 	flag.Parse()
 	conn, err := grpc.Dial(ADDRESS+":"+PORT, grpc.WithInsecure())

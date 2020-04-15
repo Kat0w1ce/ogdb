@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -11,8 +12,8 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-const (
-	HOST string = "localhost"
+var (
+	HOST string = "0.0.0.0"
 	PORT string = "2233"
 )
 
@@ -25,11 +26,16 @@ func (fd *FormatData) Echo(ctx context.Context, in *echo_example.Msg) (out *echo
 	return out, nil
 }
 func main() {
+	flag.StringVar(&HOST,"h","0.0.0.0","ip")
+	flag.StringVar(&PORT,"p","9999","port")
+	flag.Parse()
+	address:=fmt.Sprint(HOST,":",PORT)
+	fmt.Println("litsen at ",address)
 	listener, err := net.Listen("tcp", HOST+":"+PORT)
 	if err != nil {
 		log.Fatal("failed listen at: localhost")
 	} else {
-		log.Println("server is listening  ")
+		log.Println("server is listening  ",address)
 	}
 	rpcServer := grpc.NewServer()
 	echo_example.RegisterEchoServer(rpcServer, &FormatData{})
