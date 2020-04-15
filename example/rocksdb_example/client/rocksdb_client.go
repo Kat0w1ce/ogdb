@@ -4,14 +4,13 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 	"log"
 	rocksdb_example "ogdb/example/rocksdb_example/proto"
 	"os"
-	"stathat.com/c/consistent"
+	"ogdb/consistent"
 	"strings"
-
-	"golang.org/x/net/context"
-	"google.golang.org/grpc"
 )
 
 var (
@@ -70,6 +69,7 @@ func main() {
 		}
 		fmt.Print(">")
 	}
+	//time.Sleep(0.2)
 
 }
 //todo copy or ref
@@ -95,7 +95,8 @@ func getClient(key string,c *consistent.Consistent) (*rocksdb_example.RocksdbCli
 }
 func consistHashing(ip []string) *consistent.Consistent{
 	c:=consistent.New()
-	c.NumberOfReplicas=16
+	c.UseFnv=true
+	c.NumberOfReplicas=5
 	for _,addr:=range ip{
 		c.Add(addr)
 	}
