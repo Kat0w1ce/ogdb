@@ -43,6 +43,7 @@ func main() {
 	if err !=nil{
 		panic("failed to open data file")
 	}
+	defer f.Close()
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -95,8 +96,7 @@ func getClient(key string,c *consistent.Consistent) (*rocksdb_example.RocksdbCli
 }
 func consistHashing(ip []string) *consistent.Consistent{
 	c:=consistent.New()
-	c.UseFnv=true
-	c.NumberOfReplicas=5
+	c.NumberOfReplicas=16
 	for _,addr:=range ip{
 		c.Add(addr)
 	}

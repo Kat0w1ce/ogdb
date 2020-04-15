@@ -14,10 +14,10 @@ var (
 )
 
 func main() {
-	flag.StringVar(&ADDRESS,"A","localhost","address")
+	flag.StringVar(&ADDRESS,"a","localhost","address")
 	flag.StringVar(&PORT,"p","2233","address")
 	flag.Parse()
-	conn, err := grpc.Dial(ADDRESS, grpc.WithInsecure())
+	conn, err := grpc.Dial(ADDRESS+":"+PORT, grpc.WithInsecure())
 	if err != nil {
 		log.Fatal("Can't connect: " + ADDRESS)
 	}
