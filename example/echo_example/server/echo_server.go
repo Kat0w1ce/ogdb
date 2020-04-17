@@ -15,6 +15,7 @@ import (
 var (
 	HOST string = "0.0.0.0"
 	PORT string = "2233"
+	MAX  int32	=10000
 )
 
 type FormatData struct{}
@@ -28,6 +29,7 @@ func (fd *FormatData) Echo(ctx context.Context, in *echo_example.Msg) (out *echo
 func main() {
 	flag.StringVar(&HOST,"h","0.0.0.0","ip")
 	flag.StringVar(&PORT,"p","9999","port")
+	flag.IntVar(&MAX,"m",10000,"max cap")
 	flag.Parse()
 	address:=fmt.Sprint(HOST,":",PORT)
 	fmt.Println("litsen at ",address)
@@ -44,3 +46,4 @@ func main() {
 		log.Fatal("Error")
 	}
 }
+

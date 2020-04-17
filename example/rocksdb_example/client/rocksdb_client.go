@@ -19,11 +19,16 @@ var (
 	cnt0 int32=0
 	cnt1 int32=0
 	cnt2 int32=0
+	//put1 int32=0
+	//put2 int32=0
+	//put0 int32=0
+	cnt	int32 =0
 	ip =[]string {"localhost:9999","127.0.0.1:2233","localhost:6655"}
 )
 
 func main() {
 	flag.StringVar(&filepath,"f","data","choose file")
+	flag.Parse()
 	connpool=make(map[string]*grpc.ClientConn)
 	for _,addr:=range ip{
 		if conn,err:=grpc.Dial(addr,grpc.WithInsecure());err==nil{
@@ -39,7 +44,7 @@ func main() {
 	hashring:=consistHashing(ip)
 	//client := rocksdb_example.NewRocksdbClient(conn)
 	//read from file
-	f,err:=os.Open("data")
+	f,err:=os.Open(filepath)
 	if err !=nil{
 		panic("failed to open data file")
 	}
@@ -110,7 +115,12 @@ func put(client *rocksdb_example.RocksdbClient, key string, value string) {
 	if err != nil {
 		log.Fatal("put error")
 	} else {
-		log.Println("put", key, value, resp.GetOK())
+		if	resp.OK{
+			log.Println("put", key, value, resp.GetOK())
+			cnt++
+		}else {
+			log.Println("write forbidden")
+		}
 	}
 }
 
@@ -149,5 +159,6 @@ func clear() {
 			}
 		}
 	}
-	fmt.Println(cnt0,cnt1,cnt2)
+	fmt.Println(cnt0,cnt1,cnt2,cnt)
+	//fmt.Println(put0,put1,put2)
 }
