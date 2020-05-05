@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="&quot;implement Put Get rpc 12.5 21:40&quot;">
+      <change afterPath="$PROJECT_DIR$/consistenthash/consistent.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consistenthash/consistent_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consistenthash/example_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consistent/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consistent/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consistent/consistent.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistent/consistent.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consistent/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistent/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consistent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/consistent" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />

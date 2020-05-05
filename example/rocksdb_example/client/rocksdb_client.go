@@ -9,7 +9,7 @@ import (
 	"log"
 	rocksdb_example "ogdb/example/rocksdb_example/proto"
 	"os"
-	"ogdb/consistent"
+	"ogdb/consistenthash"
 	"strings"
 )
 
