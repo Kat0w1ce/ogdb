@@ -2,45 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="&quot;implement Put Get rpc 12.5 21:40&quot;">
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/data1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/client/read0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/huichen/murmur/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/huichen/murmur/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/huichen/murmur/murmur.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/murmur.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/murmur128.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/murmur32.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spaolacci/murmur3/murmur64.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consistent/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consistent/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/consistent/consistent.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistent/consistent.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consistent/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistent/example_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/000003.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/IDENTITY" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/IDENTITY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 2233&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/000003.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/IDENTITY" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/IDENTITY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 6655&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/000003.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/IDENTITY" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/IDENTITY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/localhost 58 9999&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 2233&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 2233&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 6655&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 6655&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 9999&#10;/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server_cap/localhost 58 9999&#10;/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server_cap/rocks_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server_cap/rocks_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/Kat0w1ce/consistent/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/Kat0w1ce/consistent/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/Kat0w1ce/consistent/consistent.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +23,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/consistent" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
