@@ -16,19 +16,35 @@ import (
 var (
 	connpool map[string]*grpc.ClientConn
 	filepath string
+	config string
+	replicas int
 	cnt0 int32=0
 	cnt1 int32=0
 	cnt2 int32=0
-	//put1 int32=0
-	//put2 int32=0
-	//put0 int32=0
 	cnt	int32 =0
-	ip =[]string {"localhost:9999","127.0.0.1:2233","localhost:6655"}
-)
+	ip []string
+	hasher string
+	//ip =[]string {"localhost:9999","127.0.0.1:2233","localhost:6655"}
+	//ip	=[]string{"192.168.1.20:9999","192.168.1.20:6655","192.168.1.20:2233","192.168.1.20:8888"}
+	)
 
 func main() {
 	flag.StringVar(&filepath,"f","data","choose file")
+	flag.StringVar(&config,"c","config","cluster config")
+	flag.IntVar(&replicas,"r",12,"number of replications")
+	flag.StringVar(&hasher,"h","mur","choose hash function")
 	flag.Parse()
+	conf,err:=os.Open(config)
+
+	if err !=nil{
+		log.Fatalln("failed to open config file")
+		return
+	}
+	confScanner:=bufio.NewScanner(conf)
+	for confScanner.Scan(){
+		ip=append(ip,confScanner.Text())
+	}
+	conf.Close()
 	connpool=make(map[string]*grpc.ClientConn)
 	for _,addr:=range ip{
 		if conn,err:=grpc.Dial(addr,grpc.WithInsecure());err==nil{
@@ -100,8 +116,8 @@ func getClient(key string,c *consistent.Consistent) (*rocksdb_example.RocksdbCli
 	 return &client,nil
 }
 func consistHashing(ip []string) *consistent.Consistent{
-	c:=consistent.New()
-	c.NumberOfReplicas=16
+	c:=consistent.New(hasher)
+	c.NumberOfReplicas=replicas
 	for _,addr:=range ip{
 		c.Add(addr)
 	}
