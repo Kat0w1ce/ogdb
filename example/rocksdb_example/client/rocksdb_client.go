@@ -24,15 +24,17 @@ var (
 	cnt	int32 =0
 	ip []string
 	hasher string
+	cmd bool
 	//ip =[]string {"localhost:9999","127.0.0.1:2233","localhost:6655"}
 	//ip	=[]string{"192.168.1.20:9999","192.168.1.20:6655","192.168.1.20:2233","192.168.1.20:8888"}
 	)
 
 func main() {
-	flag.StringVar(&filepath,"f","data","choose file")
+	flag.StringVar(&filepath,"f","","choose file")
 	flag.StringVar(&config,"c","config","cluster config")
 	flag.IntVar(&replicas,"r",12,"number of replications")
 	flag.StringVar(&hasher,"h","mur","choose hash function")
+	flag.BoolVar(&cmd,"i",true,"interface")
 	flag.Parse()
 	conf,err:=os.Open(config)
 
@@ -60,6 +62,42 @@ func main() {
 	hashring:=consistHashing(ip)
 	//client := rocksdb_example.NewRocksdbClient(conn)
 	//read from file
+	if filepath==""{
+		cmdline(hashring)
+	}else {
+		readfile(filepath,hashring)
+	}
+
+}
+func cmdline(hashring *consistent.Consistent){
+	scanner:=bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		line := scanner.Text()
+		cmd := strings.Split(line, " ")
+		//todo add new servers
+		if len(cmd)<2 {
+			log.Println("invaild cmd")
+			continue
+		}
+		client,err:=getClient(cmd[1],hashring)
+		if err!=nil||client==nil{
+			log.Println("failed to get client")
+			continue
+		}
+		switch cmd[0] {
+		case "put":
+			put(client, cmd[1], cmd[2])
+		case "get":
+			get(client, cmd[1])
+		case "delete":
+			delete(client, cmd[1])
+		default:
+			fmt.Println("invalid cmd")
+		}
+		fmt.Print(">")
+	}
+}
+func readfile(filepath string, hashring *consistent.Consistent) {
 	f,err:=os.Open(filepath)
 	if err !=nil{
 		panic("failed to open data file")
@@ -91,7 +129,6 @@ func main() {
 		}
 		fmt.Print(">")
 	}
-	//time.Sleep(0.2)
 
 }
 //todo copy or ref
@@ -129,6 +166,7 @@ func put(client *rocksdb_example.RocksdbClient, key string, value string) {
 		Value: value,
 	})
 	if err != nil {
+		log.Fatal(err)
 		log.Fatal("put error")
 	} else {
 		if	resp.OK{

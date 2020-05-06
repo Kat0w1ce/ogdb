@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="&quot;implement Put Get rpc 12.5 21:40&quot;">
-      <change afterPath="$PROJECT_DIR$/consistenthash/consistent.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consistenthash/consistent_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consistenthash/example_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consistent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/config" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/client/rocksdb_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +40,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="/usr/lib/go-1.13" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -43,12 +61,25 @@
     <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RunManager" selected="Go Build.go build ogdb/consistent">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="ogdb" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build echo_server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
@@ -84,6 +115,17 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <package value="ogdb" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build echo_server.go" />
       <item itemvalue="Go Build.go build rocks_server.go" />
@@ -99,8 +141,23 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -117,14 +174,23 @@
     <proxy>https://goproxy.io</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="651" y="322" width="630" height="432" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588678052766">
-      <screen x="0" y="27" width="1920" height="987" />
+    <state x="791" y="486" key="#GOROOT" timestamp="1588740305171">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
+    <state x="791" y="486" key="#GOROOT/72.27.1848.1053@72.27.1848.1053" timestamp="1588740305171" />
+    <state x="651" y="321" width="630" height="439" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588741427360">
+      <screen x="0" y="27" width="1920" height="985" />
+    </state>
+    <state x="651" y="321" width="630" height="439" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.985@0.27.1920.985" timestamp="1588741427360" />
     <state x="651" y="322" width="630" height="432" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.987@0.27.1920.987" timestamp="1588678052766" />
     <state x="499" y="65" width="912" height="919" key="CommitChangelistDialog2" timestamp="1586848782176">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
     <state x="499" y="65" width="912" height="919" key="CommitChangelistDialog2/0.27.1920.987@0.27.1920.987" timestamp="1586848782176" />
+    <state x="779" y="314" width="424" height="491" key="FileChooserDialogImpl" timestamp="1588740292089">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="779" y="314" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1588740292089" />
     <state width="1874" height="240" key="GridCell.Tab.0.bottom" timestamp="1586938914916">
       <screen x="0" y="27" width="1920" height="987" />
     </state>
@@ -141,9 +207,14 @@
       <screen x="0" y="27" width="1920" height="987" />
     </state>
     <state width="1874" height="240" key="GridCell.Tab.0.right/0.27.1920.987@0.27.1920.987" timestamp="1586938914911" />
-    <state x="623" y="242" width="672" height="678" key="search.everywhere.popup" timestamp="1586885262510">
-      <screen x="0" y="27" width="1920" height="987" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1588740292945">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1588740292945" />
+    <state x="672" y="256" width="672" height="724" key="search.everywhere.popup" timestamp="1588740288487">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="623" y="242" width="672" height="678" key="search.everywhere.popup/0.27.1920.987@0.27.1920.987" timestamp="1586885262510" />
+    <state x="672" y="256" width="672" height="724" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1588740288487" />
   </component>
 </project>
