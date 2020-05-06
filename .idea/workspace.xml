@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000010.sst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000015.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1577759054001964" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG.old.1577759089412594" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000014" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000014" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000017" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/000009.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/dump/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/MANIFEST-000008" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000008" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/dump/OPTIONS-000011" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/rocksdb_example/server/rocks_server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +18,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="/usr/lib/go-1.13" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -48,7 +32,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -58,6 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -97,20 +81,18 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b50901fb-02a3-4eef-8776-4aa2d0588474" name="Default Changelist" comment="" />
+      <created>1588739174216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588739174216</updated>
+    </task>
+    <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -119,6 +101,11 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.io" />
+      </map>
+    </environment>
     <proxy>https://goproxy.io</proxy>
   </component>
   <component name="WindowStateProjectService">
