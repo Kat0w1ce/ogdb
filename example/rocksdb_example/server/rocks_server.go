@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	ADDRESS string = "localhost"
+	ADDRESS string = "0.0.0.0"
 	PORT    string = "8081"
 )
 
